@@ -4,11 +4,12 @@ import { closeModal } from "./displayCloseModale.js";
 // J'initialise une variable à zéro qui contiendra l'id du média actuel
 let currentMediaId=0;
 
-// Je récupère les médias associés au photographe
-const photographerMedia = await getMedia();
-
 // Fonction qui crée le contenu de la lightbox avec l'ID de chaque média en paramètre
-export function createLightBoxMedia(mediaId) {
+export async function createLightBoxMedia(mediaId) {
+  
+    // Je récupère les médias associés au photographe
+    const photographerMedia = await getMedia();
+
     // La méthode find me retourne le 1er élément trouvé : j'indique qu'il correspond à chaque ID de média
     const IdArray = photographerMedia.find(
       (media) => media.id == mediaId
@@ -44,7 +45,11 @@ export function createLightBoxMedia(mediaId) {
 }
 
 // Fonction qui affiche le média suivant au click
-function nextMedia() {
+async function nextMedia() {
+
+// Je récupère les médias associés au photographe
+const photographerMedia = await getMedia();
+
 // Je récupère l'index de l'élément média actuel dans le tableau photographerMedia
 const currentIndex = photographerMedia.findIndex(
     // La condition recherchée avec findIndex : l'ID du média correspond à celui affiché
@@ -70,7 +75,11 @@ const nextBtn = document.getElementById("lightboxNextBtn");
 nextBtn.addEventListener("click", nextMedia);
   
 // Fonction qui affiche le média précédent au click
-function previousMedia() {
+async function previousMedia() {
+  
+    // Je récupère les médias associés au photographe
+    const photographerMedia = await getMedia();
+
     // Je récupère l'index de l'élément média actuel dans le tableau photographerMedia
     const currentIndex = photographerMedia.findIndex(
       // La condition recherchée avec findIndex : l'ID du média correspond à celui affiché
