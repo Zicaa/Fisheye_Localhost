@@ -10,6 +10,7 @@ export async function getPhotographer() {
   const photographerId = parseInt(params.get("id"));
   // Je fais correspondre chaque ID de photographe à l'ID récupéré dans l'URL grâce à la méthod find()
   return photographers.find((photographer) => photographer.id === photographerId);
+
 }
 
 // Fonction qui récupère les médias des photographes grâce à leur ID
@@ -22,4 +23,5 @@ export async function getMedia() {
   const photographerId = parseInt(params.get("id"));
   // Je fais correspondre chaque ID de médias à l'ID du photographe grâce à la méthod filter()
   return media.filter((mediaItem) => mediaItem.photographerId === photographerId);
+  
 }

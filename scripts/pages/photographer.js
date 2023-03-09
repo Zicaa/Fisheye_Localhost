@@ -25,7 +25,7 @@ function createPhotographHeader(photographerElement) {
           <p class="photograph-location">${city}, ${country}</p>
           <p class="photograph-tagline">${tagline}</p>
       </div>
-      <button class="contact-button" id="contactBtn" aria-label="Bouton d'ouverture du modal de contact">Contactez-moi</button>
+      <button class="contact-button" id="contactBtn" aria-label="Bouton d'ouverture du formulaire de contact">Contactez-moi</button>
       <div class="photograph-portrait">
           <img class="photograph-img" src="assets/photographers/${portrait}" alt="Photo de ${name}">
       </div>`;
@@ -171,32 +171,30 @@ function animations() {
 
 async function createPhotographerPage(){
 
-// Je récupère les données de mon photographe
-const photographerInfo = await getPhotographer();
-console.log(photographerInfo);
+  // Je récupère les données de mon photographe
+  const photographerInfo = await getPhotographer();
+  console.log(photographerInfo);
 
-// Je récupère les médias associés au photographe
-const photographerMedia = await getMedia();
-console.log(photographerMedia);
+  // Je récupère les médias associés au photographe
+  const photographerMedia = await getMedia();
+  console.log(photographerMedia);
 
-// Je crée mon header dans la page de photographes en appelant ma fonction createPhotographHeader
-createPhotographHeader(photographerInfo);
+  // Je crée mon header dans la page de photographes en appelant ma fonction createPhotographHeader
+  createPhotographHeader(photographerInfo);
 
-// Je crée mon menu de tri
-createFilterMenu();
+  // Je crée mon menu de tri
+  createFilterMenu();
 
-// Je crée mes médias 
-createMediaSection(photographerMedia);
+  // Je crée mes médias 
+  createMediaSection(photographerMedia);
 
-// Je crée mon footer
-createFooter(photographerInfo);
+  // Je crée mon footer
+  createFooter(photographerInfo);
 
-// J'insère le nom du photographe dans le titre de ma modale de contact
-photographNameInsert(photographerInfo);
+  // J'insère le nom du photographe dans le titre de ma modale de contact
+  photographNameInsert(photographerInfo);
 
-// J'appelle tous mes écouteurs d'évènement pour déclencher les animations
-animations();
+  // J'appelle tous mes écouteurs d'évènement pour déclencher les animations
+  animations();
 
-}
-
-createPhotographerPage();
+}createPhotographerPage();
