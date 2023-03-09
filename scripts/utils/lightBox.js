@@ -90,7 +90,7 @@ async function previousMedia() {
     if (currentIndex > 0) {
       // J'affiche l'élément précédent en reculant de -1 dans mon tableau
       const previousMediaId = photographerMedia[currentIndex - 1].id;
-      // J'appelle ma fonction createLightBoxMedia pour générer les éléments et lui passe ma fonction callBack en paramètre
+      // J'appelle ma fonction createLightBoxMedia pour générer les éléments 
       createLightBoxMedia(previousMediaId);
       // Sinon, j'affiche le dernier élément du tableau
     } else {

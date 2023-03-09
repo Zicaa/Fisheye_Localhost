@@ -17,30 +17,32 @@ export async function sortMediaSection() {
     // Je parcours mon tableau de boutons indexés et déclenche une fonction au click
     sortBtn.forEach((btn, index) => btn.addEventListener("click", () => {
   
-      // Si mon élément de liste est indexé à 0
+      // Si mon tableau est indexé à 0
       if (index == 0) {
         // Je change l'appelation de mon bouton
         btnSort.innerHTML = "Popularité";
         newOrder = photographerMedia.sort((a, b) => {
-          // Je retourne le nombre de likes pour ma variable b, - le nombre de likes de ma variable a 
+          // Tri par ordre décroissant sur le nbe de likes
           return b.likes - a.likes;
         });
       }
   
-      // Si mon bouton est indexé à 1
+      // Si mon tableau est indexé à 1
       if (index == 1) {
         // Je change l'appelation de mon bouton
         btnSort.innerHTML = "Date";
         newOrder = photographerMedia.sort((a, b) => {
+          // Tri par par date ancienne à récente
           return new Date(a.date) - new Date(b.date);
         });
       }
   
-      // Je trie le tableau photographerMedia en utilisant la clé likes si l'option sélectionnée est "Titre".
+      // Si mon tableau est indexé à 2
       if (index == 2) {
         // Je change l'appelation de mon bouton
         btnSort.innerHTML = "Titre";
         newOrder = photographerMedia.sort((a, b) => {
+          // Tri par ordre alphabétique
           if (a.title < b.title) {
             return -1;
           }
