@@ -2,7 +2,7 @@ import { fetchJson } from "./fetchJson.js";
 
 // Fonction qui récupère les données des photographes grâce à leur ID
 export async function getPhotographer() {
-  // J'extrais les données des photographes que je stocke dans une constante
+  // J'extrais les données du fichier json que je stocke dans une constante
   const { photographers } = await fetchJson();
   // J'accède aux données de la requête "get" grâce à searchParams
   const params = new URL(document.location).searchParams;
@@ -15,7 +15,7 @@ export async function getPhotographer() {
 
 // Fonction qui récupère les médias des photographes grâce à leur ID
 export async function getMedia() {
-  // J'extrais les données des médias que je stocke dans une constante
+  // J'extrais les données du fichier json que je stocke dans une constante
   const { media } = await fetchJson();
   // J'accède aux données de la requête "get" grâce à searchParams
   const params = new URL(document.location).searchParams;

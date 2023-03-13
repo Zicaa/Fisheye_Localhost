@@ -20,7 +20,7 @@ function displayData(photographers) {
 
 // Fonction qui crée les éléments de ma page d'accueil
 	async function init() {
-	// Je récupère les données des photographes
+	// Je récupère les données du fichier json
 	const { photographers } = await fetchJson();
 	// Je crée le HTML pour les cartes des photographes
 	displayData(photographers);
