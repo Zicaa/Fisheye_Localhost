@@ -75,7 +75,7 @@ function createFilterMenu() {
 
 }
 
-// Fonction qui génère la galerie de médias avec un tableau en entrée
+// Fonction qui crée les éléments de médias
 export function createMediaSection(array) {
   console.log({array});
 
@@ -84,9 +84,9 @@ export function createMediaSection(array) {
 
   // Je parcours mon tableau de médias
   array.forEach((media) => {
-    // Je crée un nouvel article pour chacun d'entre eux en appelant ma fonction mediaFactory
+    // Je récupère les éléments de mon objet de médias grâce à ma fonction mediaFactory
     const mediaCardModel = mediaFactory(media);
-    // A l'intérieur de ces articles, je crée les éléments de médias grâce à ma fonction getMediaCardDOM
+    // Je crée les articles de médias grâce à ma fonction getMediaCardDOM
     const mediaCardDOM = mediaCardModel.getMediaCardDOM();
     // J'injecte les nouvelles cards de medias dans ma section medias
     mediaSection.appendChild(mediaCardDOM);

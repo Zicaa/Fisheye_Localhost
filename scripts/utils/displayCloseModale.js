@@ -7,8 +7,6 @@ export function displayModal(contactModal) {
     const main = document.querySelector("main");
     const footer = document.querySelector("footer");
   
-    // Je désactive le comportement par défaut pour éviter les erreurs
-    modal.removeAttribute("open")
     // J'affiche ma modale grâce à la méthode showModal()
     modal.showModal();
     // Je lui applique le display flex pour qu'elle soie visible 
